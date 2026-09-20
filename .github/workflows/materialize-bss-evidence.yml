@@ -1,0 +1,35 @@
+name: Materialize BSS evidence
+on:
+  push:
+    paths:
+      - "bss-turbo-blue/**/*.b64"
+      - ".github/workflows/materialize-bss-evidence.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          find bss-turbo-blue -type f -name '*.b64' -print0 | while IFS= read -r -d '' f; do
+            out="${f%.b64}"
+            base64 --decode "$f" > "$out"
+          done
+      - name: Upload decoded evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: bss-evidence-materialized
+          path: |
+            bss-turbo-blue/**/*.png
+            bss-turbo-blue/**/*.jpg
+            bss-turbo-blue/**/*.jpeg
+            bss-turbo-blue/**/*.mp4
+          if-no-files-found: error
+          retention-days: 1
