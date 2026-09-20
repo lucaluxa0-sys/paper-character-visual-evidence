@@ -1,0 +1,16 @@
+name: Paper Evidence Handoff
+on:
+  workflow_dispatch:
+jobs:
+  handoff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch evidence release
+        run: curl -fL --retry 3 -o recording.mp4 "https://github.com/${{ github.repository }}/releases/download/transport-test-v1/recording.mp4"
+      - name: Upload evidence artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: paper-evidence-transport-test-v1
+          path: recording.mp4
+          if-no-files-found: error
+          retention-days: 1
