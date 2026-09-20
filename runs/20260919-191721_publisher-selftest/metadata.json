@@ -1,0 +1,45 @@
+{
+  "studio_id": "7ea92744-d5d0-42db-ae2e-8bb8bd426af2",
+  "studio_name": "Template_95206881_AutoRecovery_9.rbxl",
+  "title": "C:\\Users\\zahia\\AppData\\Local\\Roblox\\RobloxStudio\\AutoSaves\\Template_95206881_AutoRecovery_9.rbxl - Roblox Studio",
+  "capture_backend": "Windows Graphics Capture",
+  "video_path": "C:\\Users\\zahia\\Videos\\RobloxStudioAgentEvidence\\20260919-191413_github-transport-test\\recording.mp4",
+  "fps": 30.0,
+  "frames": 90,
+  "duration_seconds": 3.0,
+  "foreground_preserved": true,
+  "unique_sample_hashes": 4,
+  "sample_count": 4,
+  "capture_report": {
+    "status": "DONE",
+    "path": "C:\\Users\\zahia\\Videos\\RobloxStudioAgentEvidence\\20260919-191413_github-transport-test\\recording.mp4",
+    "fps": 30,
+    "frames": 90,
+    "elapsed": 3.0046627999981865,
+    "capture_updates": 46,
+    "unique_source_timestamps": 45,
+    "duplicate_samples": 45,
+    "missed_deadlines": 0,
+    "foreground_hwnd": 67212,
+    "target_hwnd": 1052576,
+    "target_foreground": false
+  },
+  "sample_frames": [
+    {
+      "time": 0.0,
+      "path": "C:\\Users\\zahia\\Videos\\RobloxStudioAgentEvidence\\20260919-191413_github-transport-test\\frame_0000_0.00s.jpg"
+    },
+    {
+      "time": 1.0,
+      "path": "C:\\Users\\zahia\\Videos\\RobloxStudioAgentEvidence\\20260919-191413_github-transport-test\\frame_0030_1.00s.jpg"
+    },
+    {
+      "time": 1.9666666666666666,
+      "path": "C:\\Users\\zahia\\Videos\\RobloxStudioAgentEvidence\\20260919-191413_github-transport-test\\frame_0059_1.97s.jpg"
+    },
+    {
+      "time": 2.966666666666667,
+      "path": "C:\\Users\\zahia\\Videos\\RobloxStudioAgentEvidence\\20260919-191413_github-transport-test\\frame_0089_2.97s.jpg"
+    }
+  ]
+}
