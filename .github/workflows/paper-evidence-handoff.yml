@@ -1,16 +1,29 @@
 name: Paper Evidence Handoff
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: GitHub release tag containing recording.mp4
+        required: true
+        type: string
 jobs:
   handoff:
     runs-on: ubuntu-latest
     steps:
+      - name: Validate tag
+        shell: bash
+        run: |
+          case "${{ inputs.tag }}" in
+            *[!A-Za-z0-9._-]*|'') echo "Invalid tag"; exit 2 ;;
+          esac
       - name: Fetch evidence release
-        run: curl -fL --retry 3 -o recording.mp4 "https://github.com/${{ github.repository }}/releases/download/transport-test-v1/recording.mp4"
+        shell: bash
+        run: |
+          curl -fL --retry 3 -o recording.mp4 "https://github.com/${{ github.repository }}/releases/download/${{ inputs.tag }}/recording.mp4"
       - name: Upload evidence artifact
         uses: actions/upload-artifact@v4
         with:
-          name: paper-evidence-transport-test-v1
+          name: paper-evidence-${{ inputs.tag }}
           path: recording.mp4
           if-no-files-found: error
           retention-days: 1
