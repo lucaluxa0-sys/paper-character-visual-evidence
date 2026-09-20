@@ -1,0 +1,21 @@
+﻿name: Evidence Artifact
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'paper_live_play_1306.mp4'
+      - 'paper_live_play_1306_review.pdf'
+      - '.github/workflows/evidence-artifact.yml'
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper-live-play-1306
+          path: |
+            paper_live_play_1306.mp4
+            paper_live_play_1306_review.pdf
+          retention-days: 7
