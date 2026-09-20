@@ -4,8 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'paper_live_play_1306.mp4'
-      - 'paper_live_play_1306_review.pdf'
+      - 'paper_ab_no_visualprojector.mp4'
       - '.github/workflows/evidence-artifact.yml'
 jobs:
   package:
@@ -14,8 +13,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/upload-artifact@v4
         with:
-          name: paper-live-play-1306
-          path: |
-            paper_live_play_1306.mp4
-            paper_live_play_1306_review.pdf
+          name: paper-ab-no-visualprojector
+          path: paper_ab_no_visualprojector.mp4
           retention-days: 7
